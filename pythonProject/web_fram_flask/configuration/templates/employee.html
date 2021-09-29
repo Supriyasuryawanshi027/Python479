@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmployeeInformation</title>
+</head>
+<body>
+       <font color="Green">
+       {{ message }}
+       </font>
+       <br> <br>
+
+     <form method= "post", action ="/emp/add/">
+       Employee Id : <input type="text" name ="eid" value ="{{emp.id}}" > <br> <br>
+       Employee Name : <input type="text" name ="enm" value="{{emp.name}}" > <br> <br>
+       Employee Age : <input type= "text" name ="eag" value="{{emp.age}}"> <br> <br>
+       Employee Salary : <input type="text" name ="esal" value="{{emp.esal}}"> <br> <br>
+       Employee Role :  <input type="text" name ="erole"> <br> <br>
+       Employee Gender:
+                        {% if emp_gender == 'M' %}
+                              <input type ="radio" value="M" name="Gender" checked> Male
+                              <input type ="radio" value="F" name="Gender"> Female <br><br>
+                        {% elif emp_gender == 'F' %}
+                              <input type ="radio" value="M" name="Gender"> Male
+                              <input type ="radio" value="F" name="Gender" checked> Female <br><br>
+                        {% endif %}
+                              <input type ="radio" value="M" name="Gender"> Male
+                              <input type ="radio" value="F" name="Gender"> Female <br><br>
+
+       Employee Skills : <input type="checkbox" value="Python" name="Skills"> Python
+                         <input type="checkbox" value="Java" name="Skills"> Java
+                         <input type="checkbox" value="C++" name="Skills"> C++
+                         <input type="checkbox" value="C" name="Skills"> C-pro <br><br>
+
+
+       Employee City : <select name="City">
+                       <option value="0"> --Select-- </option>
+                       <option value="P">Pune</option>
+                       <option value="B"> Basavakalyan</option>
+                       <option value="B"> Bidar</option>
+                       <option value="J"> Janapur</option>
+                       </select> <br><br>
+
+       Employee Hobbies : <select name="Hobbies" multiple>
+                       <option value= "Ca"> carrom </option>
+                       <option value= "Cr"> Cricket </option>
+                       <option value="L"> Loodo </option>
+                       <option value="wt"> Watching </option>
+                       <option value="Rd"> Reading </option>
+                       </select> <br><br>
+
+                 <input type="Submit">
+
+   </form>
+
+</body>
+</html>

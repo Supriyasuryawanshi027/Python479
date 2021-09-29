@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmployeeResgistration</title>
+</head>
+<body>
+   <center><h1> Employee Information Management</h1></center>
+    {{ message }}
+   <form action="/emp/persist" method="POST">
+       Employee Id:<input type="text" name="eid" readonly value="{{emp.id}}"> <br><br>
+       Employee Firstname:<input type="text" name="firstname" value="{{emp.firstname}}"> <br><br>
+       Employee Lastname:<input type="text" name="lastname" value="{{emp.lastname}}"> <br><br>
+       Employee Gender:{% if emp.gender == 'Male' %}
+                              <input type ="radio" value="Male" name="gender" checked> Male
+                              <input type ="radio" value="Female" name="gender"> Female <br><br>
+                        {% elif emp.gender == 'Female' %}
+                              <input type ="radio" value="Male" name="gender"> Male
+                              <input type ="radio" value="Female" name="gender" checked> Female <br><br>
+                        {% else %}
+                              <input type ="radio" value="Male" name="gender"> Male
+                              <input type ="radio" value="Female" name="gender"> Female <br><br>
+                        {% endif %}
+
+       Employee Role:<select name="roles">
+                         <option value="0"> --Select-- </option>
+                         <option value="SE" {% if emp.roles == 'SE' %} selected {%endif%}> Software Engineer</option>
+                         <option value="SSE" {% if emp.roles == 'SSE' %} selected {%endif%}> Sr. Software Engineer</option>
+                         <option value="Tl" {% if emp.roles == 'Tl' %} selected {%endif%}> Team Lead </option>
+                         <option value="MNG"{% if emp.roles == 'MNG' %} selected {%endif%}> Manager</option>
+                         <option value="PM"{% if emp.roles == 'PM' %} selected {%endif%}>Program Manager</option>
+                         <option value="CEO"{% if emp.roles == 'CEO' %} selected {%endif%}> CEO </option>
+                         </select> <br><br>
+       Employee Address:<textarea name="Address" rows="6" column="20" >
+                           {{emp.Address}}
+           </textarea> <br><br>
+       Employee Skills:<select name="Skills" Multiple>
+                         <option value="0"> --Select-- </option>
+                         <option value="PY" {%if 'PY' in emp.Skills %} selected {% endif %}> Python</option>
+                         <option value="JDE" {%if 'JDE' in emp.Skills %} selected {% endif %}> Java</option>
+                         <option value="NG" {%if 'NG' in emp.Skills %} selected {% endif %}> Angular</option>
+                         <option value="DB" {%if 'DB' in emp.Skills %} selected {% endif %}> Database</option>
+                         <option value="DS" {%if 'DS' in emp.Skills %} selected {% endif %}>Data Science</option>
+                         <option value="ML" {%if 'ML' in emp.Skills %} selected {% endif %}> Machine Learning</option>
+                         </select> <br><br>
+       Employee Project Domain: <input type="checkbox" name="project" value="Banking" {% if 'Banking' in emp.domain%} checked {%endif%}> Banking
+                                <input type="checkbox" name="project" value="Insurance" {% if 'Insurance' in emp.domain%} checked {%endif%}> Insurance
+                                <input type="checkbox" name="project" value="CRM" {% if 'CRM' in emp.domain%} checked {%endif%}> CRM
+                                <input type="checkbox" name="project" value="HealthCare" {% if 'HealthCare' in emp.domain%} checked {%endif%}> HealthCare
+                                <input type="checkbox" name="project" value="Other" {% if 'Other' in emp.domain%} checked {%endif%}> Other
+                                <br><br>
+       Employee Age:<input type="text" name="age" value="{{emp.age}}"> &nbsp;&nbsp; <font color="red"> {{ageerror}}</font> <br><br>
+       Employee Email:<input type="text" name="email" value="{{emp.email}}"> <br><br>
+       Employee Salary:<input type="text" name="salary"value="{{emp.salary}}"> <br><br>
+       Employee Contact:<input type="text" name="contact" value="{{emp.contact}}"> <br><br>
+   <input type="Submit">
+   </form>
+   {% if emplist %}
+    <table border="1">
+     <thead>
+           <th> EMPID</th>
+           <th> EMPFName</th>
+            <th> EMPGENDER</th>
+           <th> EMPROLE</th>
+           <th> EMPADDRESS</th>
+           <th> EMPDOMAIN</th>
+            <th> EMPSALARY</th>
+            <th> EMPAGE</th>
+           <th> EMPSKILLS</th>
+           <th> EMPEMAIL</th>
+            <th> EMPCONTACT</th>
+           <th> Action</th>
+
+     </thead>
+      <tbody>
+        {% for emp in emplist %}
+        <tr>
+          <td> {{emp.id}}</td>
+          <td>
+              {% if emp.gender=='Male' %}
+                    Mr.
+              {% else %}
+                    Mis.
+              {% endif %}
+              {{emp.firstname}} &nbsp; {{emp.lastname}} </td>
+            <td> {{emp.gender}}</td>
+            <td>{{emp.roles}}</td>
+            <td>{{emp.Address}}</td>
+            <td>{{emp.domain}}</td>
+            <td> {{emp.salary}}</td>
+            <td> {{emp.age}}</td>
+            <td>{{emp.Skills}}</td>
+            <td> {{emp.email}}</td>
+             <td> {{emp.contact}}</td>
+            <td> <a href="edit/{{emp.id}}">EDIT</a>
+                <a href="delete/{{emp.id}}">DELETE</a>
+
+            </td>
+
+
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+   {% else %}
+      <h2> No Records....</h2>
+   {% endif %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Employee</title>
+</head>
+<body>
+   <table border="1">
+     <thead>
+           <th> EMPID</th>
+           <th> EMPName</th>
+            <th> EMPSALARY</th>
+            <th> EMPAGE</th>
+            <th> EMPCITY</th>
+            <th> EMPSKILLS</th>
+            <th> EMPHOBBIES</th>
+            <th> EMPGENDER</th>
+     </thead>
+      <tbody>
+        {% for emp in emplist %}
+        <tr>
+          <td> {{emp.id}}</td>
+          <td> {{emp.name}}</td>
+          <td> {{emp.salary}}</td>
+          <td> {{emp.age}}</td>
+          <td> {{emp.city}}</td>
+          <td> {{emp.skills}}</td>
+          <td> {{emp.hobbies}}</td>
+          <td> {{emp.gender}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
+
+</body>
+</html>
