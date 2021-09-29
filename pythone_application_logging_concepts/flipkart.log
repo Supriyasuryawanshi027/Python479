@@ -1,0 +1,63 @@
+INFO:root:Inside addition10, 20
+INFO:root:Result--->30
+INFO:root:Inside division78, 4
+INFO:root:Result--->19.5
+INFO:root:Inside division12, 45
+INFO:root:Result--->0.26666666666666666
+INFO:root:Inside division125, 54
+INFO:root:Result--->2.314814814814815
+INFO:root:Inside addition10, 20
+INFO:root:Result--->30
+INFO:root:Inside addition50, 47
+INFO:root:Result--->97
+INFO:root:Inside addition78, 45
+INFO:root:Result--->123
+INFO:root:Inside division47, 45
+INFO:root:Result--->1.0444444444444445
+INFO:root:Inside division78, 45
+INFO:root:Result--->1.7333333333333334
+INFO:root:Inside division0, 45
+INFO:root:Inside division0, 12
+INFO:root:Inside addition10, 20
+INFO:root:Result--->30
+INFO:root:Inside addition45, 78
+INFO:root:Result--->123
+INFO:root:Inside addition47, 587
+INFO:root:Result--->634
+INFO:root:Inside addition45, 0
+INFO:root:Result--->45
+INFO:root:Inside division45, 78
+INFO:root:Result--->0.5769230769230769
+INFO:root:Inside division0, 1
+INFO:root:Inside division45, 47
+INFO:root:Result--->0.9574468085106383
+INFO:root:Inside division45, 0
+ERROR:root:Invalid values for divide ('division by zero',)
+ERROR:root:Invalid inputs ("local variable 'result' referenced before assignment",)
+ERROR:root:Invalid inputs ("invalid literal for int() with base 10: 'ytr'",)
+ERROR:root:Invalid inputs ("invalid literal for int() with base 10: 'fhg'",)
+ERROR:root:Invalid inputs ("invalid literal for int() with base 10: 'vvh'",)
+2021-09-28 15:59:24,164 - Inside addition10, 20 - addition - 8 - INFO
+2021-09-28 15:59:24,185 - Result--->30 - launch_applicaion - 36 - INFO
+2021-09-28 15:59:29,588 - Inside division30, 40 - division - 15 - INFO
+2021-09-28 15:59:29,588 - Result--->0.75 - launch_applicaion - 36 - INFO
+2021-09-28 15:59:51,173 - Inside addition45, 45 - addition - 8 - INFO
+2021-09-28 15:59:51,173 - Result--->90 - launch_applicaion - 36 - INFO
+2021-09-28 15:59:54,928 - Inside division45, 0 - division - 15 - INFO
+2021-09-28 15:59:54,928 - Invalid values for divide ('division by zero',) - division - 19 - ERROR
+2021-09-28 15:59:54,929 - Invalid inputs ("local variable 'result' referenced before assignment",) - launch_applicaion - 38 - ERROR
+2021-09-28 15:59:56,798 - Invalid inputs ("invalid literal for int() with base 10: ''",) - launch_applicaion - 38 - ERROR
+2021-09-28 16:00:00,784 - Inside division0, 45 - division - 15 - INFO
+2021-09-28 16:06:22,028 - This is info msg - <module> - 6 - INFO
+2021-09-28 16:06:22,028 - This is error msg - <module> - 7 - ERROR
+2021-09-28 16:06:22,028 - This is critical msg - <module> - 8 - CRITICAL
+2021-09-28 16:06:22,029 - This is warning msg - <module> - 9 - WARNING
+2021-09-28 16:06:28,142 - Invalid inputs ("invalid literal for int() with base 10: ''",) - launch_applicaion - 44 - ERROR
+2021-09-28 16:06:31,844 - Inside addition10, 20 - addition - 14 - INFO
+2021-09-28 16:06:31,844 - Result--->30 - launch_applicaion - 42 - INFO
+2021-09-28 16:06:35,384 - Inside division45, 0 - division - 21 - INFO
+2021-09-28 16:06:35,385 - Invalid values for divide ('division by zero',) - division - 25 - ERROR
+2021-09-28 16:06:35,385 - Invalid inputs ("local variable 'result' referenced before assignment",) - launch_applicaion - 44 - ERROR
+2021-09-28 16:06:40,628 - Inside division45, 0 - division - 21 - INFO
+2021-09-28 16:06:40,629 - Invalid values for divide ('division by zero',) - division - 25 - ERROR
+2021-09-28 16:06:40,629 - Invalid inputs ("local variable 'result' referenced before assignment",) - launch_applicaion - 44 - ERROR
